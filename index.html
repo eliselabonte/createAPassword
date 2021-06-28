@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
     <title>Password Generator</title>
-    <link rel="stylesheet" href="./assets/style.css" />
+
+    <link rel="stylesheet" href="./assets/reset.css" />
+    <link rel="stylesheet" href="./assets/style.css"/>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lemon&family=Limelight&family=Source+Code+Pro:wght@500&display=swap" rel="stylesheet">
+
   </head>
+  
   <body>
     <div class="wrapper">
       <header>
@@ -14,12 +24,34 @@
       </header>
       <div class="card">
         <div class="card-header">
-          <h2>Generate a Password</h2>
+          <h2 class="generate-a-password">Generate a Password</h2>
         </div>
+
+        <form id="passwordGeneratorForm" class="form">
+          <fieldset>
+            <label for="numbers">Include Numbers</label>
+            <input type="checkbox" id="numbers" name="numbers" checked><br><br>
+
+            <label for="uppercase">Include Uppercase</label>
+            <input type="checkbox" id="uppercase" name="uppercase" checked><br><br>
+
+            <label for="special-characters">Include Special Characters</label>
+            <input type="checkbox" id="specChar" name="special-characters" checked><br><br>
+
+            <label for="length">Password Length</label>
+            <input type="number" id="lengthNum" name="length" checked min=5 max=30>
+            <input type="range" id="lengthRange" name="length" min=5 max=30>
+
+          </fieldset>
+
+        </form>
+
+
+
         <div class="card-body">
           <textarea
             readonly
-            id="password"
+            class="password"
             placeholder="Your Secure Password"
             aria-label="Generated Password"
           ></textarea>
