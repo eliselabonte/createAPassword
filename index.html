@@ -23,9 +23,6 @@
         <h1>Password Generator</h1>
       </header>
       <div class="card">
-        <div class="card-header">
-          <h2 class="generate-a-password">Generate a Password</h2>
-        </div>
 
         <form id="passwordGeneratorForm" class="form">
           <fieldset>
@@ -39,7 +36,7 @@
             <input type="checkbox" id="specChar" name="special-characters" checked><br><br>
 
             <label for="length">Password Length</label>
-            <input type="number" id="lengthNum" name="length" checked min=5 max=30>
+            <!-- <input type="number" id="lengthNum" name="length" checked min=5 max=30> -->
             <input type="range" id="lengthRange" name="length" min=5 max=30>
 
           </fieldset>
@@ -51,13 +48,14 @@
         <div class="card-body">
           <textarea
             readonly
+            id="password"
             class="password"
-            placeholder="Your Secure Password"
+            placeholder="Password"
             aria-label="Generated Password"
           ></textarea>
         </div>
         <div class="card-footer">
-          <button id="generate" class="btn">Generate Password</button>
+          <button id="generate" class="btn" type="submit">Generate Password</button>
         </div>
       </div>
     </div>
