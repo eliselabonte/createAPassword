@@ -8,7 +8,7 @@ function writePassword(finalPassword) {
   var passwordText = document.querySelector("#password");
   
   passwordText.value = password;
-  
+
 }
 
 // Add event listener to generate button
@@ -73,22 +73,5 @@ function generatePassword() {
  return writePassword(pass);
 
 };
-
-
-// use randomNumber to 
-
-
-// define function that happens when form is submitted
-
-
-//  function generate(){
-//   const includeUppercase = uppercase.checked;
-//   const includeNumbers = numbers.checked;
-//   const includeSpecChar = specChar.checked;
-//   const charLength = length.value;
-//   writePassword(); //includeUppercase, includeNumbers, includeSpecChar, charLength
-// };
-
-// writePassword();
 
 
