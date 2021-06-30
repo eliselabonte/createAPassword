@@ -23,6 +23,24 @@ const uppercase = document.getElementById('uppercase');
 const numbers = document.getElementById('numbers');
 const specChar = document.getElementById('specChar');
 const length = document.getElementById('lengthRange')
+const sliderLabel = document.getElementById('numberDisplay')
+
+// change text content of span to slider value
+sliderLabel.textContent = length.value;
+
+// update the span content to match slider value
+const updateSliderLabel = function(event){
+
+  const sliderLabel = document.getElementById('numberDisplay')
+
+  sliderLabel.textContent = event.target.value;
+}
+
+// whenever the slider is changed, call function to update the label
+lengthRange.addEventListener("change", updateSliderLabel); 
+
+
+
 
 // define range of uppercase, numbers, and specChar using character codes
 const uppercaseCodes = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -32,7 +50,7 @@ const specCharCodes  = "!@#$%^&*<>?|~";
 let allCodes         = "abcdefghijklmnopqrstuvwxyz";
 
 
-// create function
+// DON'T default reload page on submit, DO capture the data from the form, then call generatePassword
 function defaultAndCaptureData(event) {
   
   allCodes = "abcdefghijklmnopqrstuvwxyz";
@@ -42,7 +60,6 @@ function defaultAndCaptureData(event) {
   const wantsUppercase = uppercase.checked;
   const wantsNumbers = numbers.checked;
   const wantsSpecChar = specChar.checked;
-  console.log(wantsUppercase)
 
   if (wantsUppercase) {
     allCodes += uppercaseCodes;
@@ -58,7 +75,7 @@ function defaultAndCaptureData(event) {
 }
 
 
-// create randomNumber within the range of the length of index
+// create randomNumber within the range of the length of index, input value into writePassword function
 function generatePassword() {
 
   let pass = '';
